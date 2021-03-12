@@ -11,12 +11,12 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then(m => m.RegisterModule)
   },
   {
-    path: 'socio',
-    loadChildren: () => import('./tab1/tab1.module').then(m => m.Tab1PageModule)
+    path: 'partner',
+    loadChildren: () => import('./partner/partner.module').then(m => m.PartnerPageModule)
   },
   {
     path: 'admin',
-    loadChildren: () => import('./tab2/tab2.module').then(m => m.Tab2PageModule)
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminPageModule)
   },
 ];
 @NgModule({
