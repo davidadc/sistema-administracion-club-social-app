@@ -1,3 +1,44 @@
-<p>
-  login works!
-</p>
+
+
+<ion-content >
+  <ion-grid>
+    <ion-row >
+      <ion-col>
+        <ion-title size="large">
+          <h1>Club Democrata</h1>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>
+        <ion-title size="large">
+          <h2>Login</h2>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center inputRow">
+      <ion-col >
+        <ion-item>
+          <ion-label>Correo electrónico</ion-label>
+          <ion-input placeholder="Ingrese su correo electrónico"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contraseña</ion-label>
+          <ion-input type="password" placeholder="Ingrese su contraseña"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col class="buttonLogin">
+        <ion-button size="small">Ingresar</ion-button>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="ion-align-items-center" >
+      <ion-col size="8">
+        <ion-text >¿No tienes una cuenta?</ion-text>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button size="small" routerLink="/register">Registrate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

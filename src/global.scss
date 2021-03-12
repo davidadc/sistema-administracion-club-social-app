@@ -28,3 +28,10 @@
 .active-item {
     border-left: 8px solid var(--ion-color-secondary);
 }
+
+ion-content { 
+    --ion-background-color: #16A085;  
+    --ion-background-color: -webkit-linear-gradient(to bottom, #F4D03F, #16A085);
+    --ion-background-color: linear-gradient(to bottom, #F4D03F, #16A085); 
+  
+  }
