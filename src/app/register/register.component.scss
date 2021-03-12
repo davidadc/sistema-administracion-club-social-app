@@ -1,0 +1,44 @@
+ion-content{
+    color: white;
+}
+  
+ion-grid{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+  
+ion-label{
+    width: 40%;
+}
+
+.inputRow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+}
+  
+.buttonLogin{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+  
+ion-item{
+    --ion-background-color: rgba(0,0,0,0.5) !important;
+    color: white !important;
+    width: 100%;
+}
+  
+h1{
+    font-size: 40px;
+}
+  
+h2{
+    font-size: 35px; 
+}

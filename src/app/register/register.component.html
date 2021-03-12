@@ -1,3 +1,58 @@
-<p>
-  register works!
-</p>
+<ion-content >
+  <ion-grid>
+    <ion-row >
+      <ion-col>
+        <ion-title size="large">
+          <h1>Club Democrata</h1>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>
+        <ion-title size="large">
+          <h2>Registro</h2>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+          <ion-input placeholder="Ingrese su nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apellido</ion-label>
+          <ion-input placeholder="Ingrese su apellido"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Correo electrónico</ion-label>
+          <ion-input placeholder="Ingrese su correo electrónico"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Telefono</ion-label>
+          <ion-input type="number" placeholder="Ingrese su telefono"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contraseña</ion-label>
+          <ion-input type="password" placeholder="Ingrese su contraseña"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Confirmar contraseña</ion-label>
+          <ion-input type="password" placeholder="Confirma la contraseña"></ion-input>
+        </ion-item>
+      
+      <ion-col class="buttonLogin">
+        <ion-button size="small">Registrar</ion-button>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row class="ion-align-items-center" >
+      <ion-col size="8">
+        <ion-text >¿Ya tienes una cuenta?</ion-text>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button size="small" routerLink="/">Inicie sesión</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
