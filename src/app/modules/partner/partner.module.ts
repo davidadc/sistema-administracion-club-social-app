@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { PartnerPage } from './partner.page';
 
 import { PartnerPageRoutingModule } from './partner-routing.module';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [

@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminPage } from './admin.page';
 
 import { AdminPageRoutingModule } from './admin-routing.module';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
