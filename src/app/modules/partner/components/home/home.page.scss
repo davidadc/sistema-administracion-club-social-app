@@ -1,5 +1,4 @@
 .PartnerInfo{
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -31,15 +30,26 @@
 }
 .PartnerNotices{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,0.5) !important;
-    padding: 12px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    padding: 5%;
     color: white;
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p{
+            font-size: 18px;
+        }
+    }
+
 }   
 
 .PartnerNotices img{
-
     width: 90%;
     height: 60%;
 }
@@ -47,16 +57,20 @@
 .seccion{
     display: flex;
     flex-direction: column;
+
+    p{
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
 }
 
 img{
     height: 100%;
     width: 100%;
 }
-p{
-    font-size: 18px;
-    margin-bottom: 30px;
-}
+
+
+
 
 h2{
     width: 100%;
