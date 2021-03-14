@@ -4,14 +4,7 @@
      margin-top: 5%;
  
 }
-.news_notice{ 
-   font-size: 30px;
-   margin: 5% 2%;
-   display: flex;
-   color: white;
-   background-color: rgba(0,0,0,0.5) !important;
-   padding: 3%;
-}
+
 .newsTitle{ 
     font-size: 25px;
     color: white;
@@ -26,5 +19,11 @@
 
 .newsButton{ 
      margin: 2%;
-  
+}
+
+.autor{ 
+    font-size: 18px;
+    margin: 3%;
+    font-style: italic;
+    letter-spacing: 1px;
 }

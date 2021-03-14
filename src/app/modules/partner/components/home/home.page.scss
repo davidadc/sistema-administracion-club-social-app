@@ -14,12 +14,17 @@
     justify-content: center;
 
 }
+.newsButton{ 
+    margin: 2%;
+    display: flex;
+    align-self: flex-start;
+}
+
 
 .PartnerEvents{
     padding: 20px;
     width: 100%;
     height: 42%;
-
 }
 .PartnerTitleNotices{
     height: 15%;
@@ -77,4 +82,5 @@ h2{
     display: flex;
     margin: 20px auto;
     justify-content: center;
+    color: white;
 }

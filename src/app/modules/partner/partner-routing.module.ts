@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule)
       },
       {
+        path: 'news/1',
+        loadChildren: () => import('./components/news-item/news-item.module').then(m => m.NewsItemModule)
+      },
+      {
         path: '',
         redirectTo: '',
         pathMatch: 'full'
