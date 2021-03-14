@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('./components/news/news.module').then(m => m.NewsPageModule)
       },
       {
+        path: 'profile',
+        loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule)
+      },
+      {
         path: '',
         redirectTo: '',
         pathMatch: 'full'

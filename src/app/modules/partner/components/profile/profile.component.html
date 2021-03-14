@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar class="menuTitle">
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button menu="first" autohide="false" color="medium"></ion-menu-button> -->
+      <ion-menu-button autohide="true" color="medium"></ion-menu-button>
+    </ion-buttons>
+    <ion-title  >Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <ion-row >
+      <ion-col>
+        <ion-title size="large">
+          <h1>Club Demócrata</h1>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <ion-title size="large">
+          <h2>Mi perfil</h2>
+        </ion-title>
+      </ion-col>
+      <ion-col class="col-button">
+        <div *ngIf="!editValues">
+          <ion-button (click)="editDates()" size="small">Editar datos</ion-button>
+        </div>
+       <div *ngIf="editValues">
+        <ion-button (click)="editDates()" color="danger" size="small">Cancel</ion-button>
+       </div> 
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+          <ion-input [disabled]="!editValues" placeholder="Ingrese su nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apellido</ion-label>
+          <ion-input [disabled]="!editValues" placeholder="Ingrese su apellido"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Correo electrónico</ion-label>
+          <ion-input [disabled]="!editValues" placeholder="Ingrese su correo electrónico"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Telefono</ion-label>
+          <ion-input [disabled]="!editValues" type="number" placeholder="Ingrese su telefono"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contraseña</ion-label>
+          <ion-input [disabled]="!editValues" type="password" placeholder="Ingrese su contraseña"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Confirmar contraseña</ion-label>
+          <ion-input [disabled]="!editValues" type="password" placeholder="Confirma la contraseña"></ion-input>
+        </ion-item>
+      
+      <ion-col class="buttonLogin">
+        <ion-button (click)="editDates()" *ngIf="editValues" size="small">Guardar cambios</ion-button>
+      </ion-col>
+    </ion-row>
+    
+ 
+    
+  </ion-grid>
+</ion-content>
