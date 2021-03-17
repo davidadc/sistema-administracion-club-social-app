@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -10,7 +11,7 @@ export class PartnerPage {
 
   public paneEnabled: boolean = false;
 
-  constructor(private menuCtl: MenuController) {}
+  constructor(private menuCtl: MenuController, private router: Router) {}
 
   async ionViewWillEnter() {
     
@@ -21,8 +22,13 @@ export class PartnerPage {
   }
   
   ionViewWillLeave() {
-    
     this.paneEnabled = false;
+  }
+
+  logout() {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("id");
+    this.router.navigate(["/"]);
   }
 
 }

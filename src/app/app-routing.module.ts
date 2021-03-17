@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'partner',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./modules/partner/partner.module').then(m => m.PartnerPageModule)
   },
   {

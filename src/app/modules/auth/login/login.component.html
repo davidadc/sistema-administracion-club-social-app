@@ -17,19 +17,32 @@
       </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center inputRow">
-      <ion-col >
-        <ion-item>
-          <ion-label>Correo electrónico</ion-label>
-          <ion-input placeholder="Ingrese su correo electrónico"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Contraseña</ion-label>
-          <ion-input type="password" placeholder="Ingrese su contraseña"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col class="buttonLogin">
-        <ion-button size="small">Ingresar</ion-button>
-      </ion-col>
+      <form [formGroup]="userForm">
+        <ion-col>
+          <ion-item>
+            <ion-label>Correo electrónico</ion-label>
+            <ion-input  
+            id="email"
+            formControlName="email"
+            minlength="4"
+            maxlength="40"  
+            placeholder="Ingrese su correo electrónico">
+          </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Contraseña</ion-label>
+            <ion-input type="password" 
+            id="password"
+            formControlName="password"
+            minlength="4"
+            maxlength="40" placeholder="Ingrese su contraseña">
+          </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col class="buttonLogin">
+          <ion-button type="submit" size="small" [disabled]="userForm.invalid" (click)="loginUser()">Ingresar</ion-button>
+        </ion-col>
+      </form>
     </ion-row>
     
     <ion-row class="ion-align-items-center" >

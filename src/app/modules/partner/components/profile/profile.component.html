@@ -33,34 +33,63 @@
       </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center">
-      
+      <form [formGroup]="editProfileForm">
         <ion-item>
           <ion-label>Nombre</ion-label>
-          <ion-input [disabled]="!editValues" placeholder="Ingrese su nombre"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Apellido</ion-label>
-          <ion-input [disabled]="!editValues" placeholder="Ingrese su apellido"></ion-input>
+          <ion-input 
+            id="name"
+            formControlName="name"
+            minlength="4"
+            maxlength="20"
+            placeholder="Ingrese su nombre">
+          </ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Correo electrónico</ion-label>
-          <ion-input [disabled]="!editValues" placeholder="Ingrese su correo electrónico"></ion-input>
+          <ion-input 
+            id="email"
+            formControlName="email"
+            minlength="4"
+            maxlength="40"
+            placeholder="Ingrese su correo electrónico">
+          </ion-input>
         </ion-item>
         <ion-item>
           <ion-label>Telefono</ion-label>
-          <ion-input [disabled]="!editValues" type="number" placeholder="Ingrese su telefono"></ion-input>
+          <ion-input 
+            id="phone"
+            formControlName="phone"
+            minlength="4"
+            maxlength="20"
+            placeholder="Ingrese su telefono">
+          </ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item *ngIf="editValues">
           <ion-label>Contraseña</ion-label>
-          <ion-input [disabled]="!editValues" type="password" placeholder="Ingrese su contraseña"></ion-input>
+          <ion-input 
+            type="password" 
+            id="password"
+            formControlName="password"
+            minlength="4"
+            maxlength="20"
+            placeholder="Ingrese su contraseña">
+          </ion-input>
         </ion-item>
-        <ion-item>
+        <ion-item *ngIf="editValues">
           <ion-label>Confirmar contraseña</ion-label>
-          <ion-input [disabled]="!editValues" type="password" placeholder="Confirma la contraseña"></ion-input>
+          <ion-input 
+            type="password" 
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            minlength="4"
+            maxlength="20"
+            placeholder="Confirma la contraseña">
+          </ion-input>
         </ion-item>
-      
+      </form>
+        
       <ion-col class="buttonLogin">
-        <ion-button (click)="editDates()" *ngIf="editValues" size="small">Guardar cambios</ion-button>
+        <ion-button (click)="updateUser()" *ngIf="editValues" size="small">Guardar cambios</ion-button>
       </ion-col>
     </ion-row>
     

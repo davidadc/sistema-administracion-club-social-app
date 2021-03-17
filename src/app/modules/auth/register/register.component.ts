@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,8 +10,85 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  public newUserForm: FormGroup;
 
-  ngOnInit() {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {}
+
+  ngOnInit() {
+    this.initializeForm();
+  }
+
+  initializeForm(): void {
+    this.newUserForm = this.fb.group(
+      {
+        name: ["", Validators.required],
+        email: ["", [Validators.required, Validators.email]],
+        phone: ["", Validators.required],
+        password: [
+          "",
+          [
+            Validators.required,
+            Validators.pattern(
+              "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+            ),
+          ],
+        ],
+        confirmPassword: [
+          "",
+          [
+            Validators.required,
+            Validators.pattern(
+              "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+            ),
+          ],
+        ],
+      },
+      this.passwordMatchValidator
+    );
+  }
+
+  get name() {
+    return this.newUserForm.get("name");
+  }
+
+  get phone() {
+    return this.newUserForm.get("phone");
+  }
+
+  get email() {
+    return this.newUserForm.get("email");
+  }
+
+  get password() {
+    return this.newUserForm.get("password");
+  }
+
+  get confirmPassword() {
+    return this.newUserForm.get("confirmPassword");
+  }
+
+  get confirmPasswordValue() {
+    return (
+      this.newUserForm.get("password").value ==
+      this.newUserForm.get("confirmPassword").value
+    );
+  }
+
+  passwordMatchValidator(g: FormGroup) {
+    return g.get("password").value === g.get("confirmPassword").value
+      ? null
+      : { mismatch: true };
+  }
+
+  registerNewUser(): void {
+    this.authService.registerUser(this.newUserForm.value).subscribe((res) => {
+      this.initializeForm();
+      this.router.navigate(["/"]);
+    });
+  }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PartnerService } from '../../partner.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  private user;
 
-  constructor() { }
+  constructor(private partnerService: PartnerService) {}
 
   ngOnInit() {
+    this.partnerService.getUserData().subscribe((data: any) => {
+      if (data) {
+        this.user = data.data;
+      }
+    });
   }
-
 }
