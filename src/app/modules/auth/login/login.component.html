@@ -1,5 +1,3 @@
-
-
 <ion-content >
   <ion-grid>
     <ion-row >
@@ -42,10 +40,17 @@
         <ion-col class="buttonLogin">
           <ion-button type="submit" size="small" [disabled]="userForm.invalid" (click)="loginUser()">Ingresar</ion-button>
         </ion-col>
+        <ion-chip *ngIf="email.invalid && email.touched">
+          <ion-label> Debes agregar un correo electrónico válido: entre 4 y 20 carácteres.</ion-label>
+        </ion-chip>
+        <ion-chip *ngIf="password.invalid && password.touched">
+          <ion-label>Debes agregar una contraseña correcta válida: entre 4 y 20
+            carácteres, con una minúscula, una mayúcusla y un carácter especial.</ion-label>
+        </ion-chip>
       </form>
     </ion-row>
     
-    <ion-row class="ion-align-items-center" >
+    <ion-row class="ion-align-items-center" style="margin-top: 2%;">
       <ion-col size="8">
         <ion-text >¿No tienes una cuenta?</ion-text>
       </ion-col>

@@ -16,9 +16,14 @@ const routes: Routes = [
         loadChildren: () => import('./components/news/news.module').then(m => m.NewsPageModule)
       },
       {
+        path: 'upgrade',
+        loadChildren: () => import('./components/upgrade-profile/upgrade-profile.module').then(m => m.UpgradeProfileModule)
+      },
+      {
         path: 'profile',
         loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule)
       },
+    
       {
         path: 'news/1',
         loadChildren: () => import('./components/news-item/news-item.module').then(m => m.NewsItemModule)

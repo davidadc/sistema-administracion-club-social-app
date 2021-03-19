@@ -3,15 +3,12 @@ ion-content{
 }
 
 ion-grid{
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-  }
-
-  ion-label{
-    width: 40%;
   }
 
   .inputRow{
@@ -21,6 +18,24 @@ ion-grid{
     align-items: center;
     height: 30%;
     width: 100%;
+
+    form {
+      width: 90%;
+    }
+
+    ion-label{
+      width: 40%;
+    }
+
+    ion-chip {
+      width: 100%;
+      padding: 4% 5%;
+      background-color: rgba(0,0,0,0.5) !important;
+
+      ion-label {
+        width: 100%;
+      }
+    }
   }
 
   .buttonLogin{
@@ -40,4 +55,6 @@ ion-grid{
   h2{
    font-size: 35px; 
   }
+  
+
   

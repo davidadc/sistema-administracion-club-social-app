@@ -1,0 +1,27 @@
+.grid{
+
+  height: 100%;
+}
+
+.upgrade{
+
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-around;
+  height: 25%;
+  align-items: center;
+
+  .membresia{
+    padding-top: 6%;
+  }
+
+  select{
+    width: 30%;
+  }
+ 
+  h2{
+
+    font-size: 30px;
+  }
+
+}

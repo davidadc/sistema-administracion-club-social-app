@@ -14,7 +14,7 @@
         </ion-title>
       </ion-col>
     </ion-row>
-    <ion-row class="ion-justify-content-center">
+    <ion-row class="ion-justify-content-center inputRow">
       <form [formGroup]="newUserForm">
         <ion-item>
           <ion-label>Nombre</ion-label>
@@ -69,10 +69,27 @@
         <ion-col class="buttonLogin">
           <ion-button  type="submit" size="small" [disabled]="newUserForm.invalid" (click)="registerNewUser()">Registrar</ion-button>
         </ion-col>
+        <ion-chip *ngIf="name.invalid && name.touched">
+          <ion-label>Debes agregar un nombre válido: entre 4 y 20 carácteres.</ion-label>
+        </ion-chip>
+        <ion-chip *ngIf="phone.invalid && phone.touched">
+          <ion-label>Debes agregar un teléfono nacional válido.</ion-label>
+        </ion-chip>
+        <ion-chip *ngIf="email.invalid && email.touched">
+          <ion-label>Debes agregar un correo electrónico válido: entre 4 y 40 carácteres.</ion-label>
+        </ion-chip>
+        <ion-chip *ngIf="password.invalid && password.touched">
+          <ion-label>Debes agregar una contraseña correcta válida: entre 8 y 20
+            carácteres, con una minúscula, una mayúcusla y un carácter especial.</ion-label>
+        </ion-chip>
+        <ion-chip *ngIf="!confirmPasswordValue && confirmPassword.touched">
+          <ion-label>Las contraseñas deben coincidir.</ion-label>
+        </ion-chip>  
+        
       </form>
     </ion-row>
     
-    <ion-row class="ion-align-items-center" >
+    <ion-row class="ion-align-items-center ion-margin-top" >
       <ion-col size="8">
         <ion-text >¿Ya tienes una cuenta?</ion-text>
       </ion-col>
