@@ -23,10 +23,13 @@ const routes: Routes = [
         path: 'profile',
         loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule)
       },
-    
       {
         path: 'news/1',
         loadChildren: () => import('./components/news-item/news-item.module').then(m => m.NewsItemModule)
+      },
+      {
+        path: 'events',
+        loadChildren: () => import('./components/activities/activities.module').then(m => m.ActivitiesPageModule)
       },
       {
         path: '',

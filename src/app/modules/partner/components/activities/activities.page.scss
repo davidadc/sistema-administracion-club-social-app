@@ -1,0 +1,49 @@
+
+ion-slides.ios.slides-ios.swiper-container.hydrated.swiper-container-initialized.swiper-container-horizontal.swiper-container-ios {
+  height: 100%;
+}
+
+img {
+  width: 100%!important;
+  height: 50vw !important;
+  margin-bottom: 10px;
+}
+
+ion-slides.md.slides-md.swiper-container.hydrated.swiper-container-initialized.swiper-container-horizontal {
+  height: 100% !important;
+}
+
+.myOverlay {
+  position: absolute;
+  right: 15%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+ion-card-title,
+ion-card-subtitle {
+  color: white !important;
+}
+
+
+ion-card {
+  background: rgba(0, 0, 0, 0.5) !important;
+  color: white;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ion-card-content {
+  text-align: justify;
+  height: auto ;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
