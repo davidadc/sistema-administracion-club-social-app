@@ -12,19 +12,77 @@
 
   <ion-grid class="grid">
     <ion-row class="upgrade">
+      <ion-radio-group value="grape" (ionChange)="radioGroupChange($event)">
+        <ion-list-header>
+          <ion-label>
+            <ion-title size="large">Tipos de Membresía</ion-title>
+          </ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Bronce</ion-label>
+          <ion-radio slot="start" value="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Plata</ion-label>
+          <ion-radio slot="start" value="2"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Oro</ion-label>
+          <ion-radio slot="start" value="3"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-row>
+    <ion-row>
       <ion-col>
-        <h2>Tipo de membresia</h2>
+        <ion-button (click)="upgrade()">¡Ser socio ahora!</ion-button>
       </ion-col>
-      <ion-col class="membresia">
-        <select>
-      <option value="1">Bronce</option>
-      <option value="2">Plata</option>
-      <option value="3">Oro</option>
-    </select>
-      </ion-col>
-      <ion-col>
-        <ion-button>¡Ser socio ahora!</ion-button>
-      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-card *ngIf="profileType == 1">
+        <ion-card-header>
+          <ion-card-title>Bronce</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Cuentas con beneficios tales como: acceso a las instalaciones
+          deportivas los jueves y viernes, al complejo de piscinas dos veces por
+          mes, acceso a las salas de conferencias del edificio secundario. Uso
+          de la sala de eventos una vez por mes.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card  *ngIf="profileType == 2">
+        <ion-card-header>
+          <ion-card-title>Plata</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Cuentas con beneficios tales como: acceso a las instalaciones
+          deportivas todos los días, al complejo de piscinas, acceso a las salas
+          de conferencias del edificio secundario, uso de la sala de eventos
+          para cualquier tipo de actividad. Además, dispondra del parque
+          infantil Guaki 2007.
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card  *ngIf="profileType == 3">
+        <ion-card-header>
+          <ion-card-title>Oro</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          Cuentas con todos los beneficios tales como: acceso a las
+          instalaciones deportivas todos los días, al complejo de piscinas,
+          acceso a las salas de conferencias de los 3 edificios, uso de la sala
+          de eventos para cualquier tipo de actividad, disponibilidad de los
+          restaurantes y tiendas de comida en todo momento. Además, dispondra
+          del parque infantil Guaki 2007, con opción a ingresar con invitados. Y
+          por último, disponibilidad tickets VIP a eventos músicales.
+        </ion-card-content>
+      </ion-card>
     </ion-row>
   </ion-grid>
 
