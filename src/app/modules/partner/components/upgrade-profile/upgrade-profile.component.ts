@@ -25,7 +25,14 @@ export class UpgradeProfileComponent implements OnInit {
     this.profileType = e.detail.value;
   }
 
-  upgrade() {
-    console.log(this.profileType, this.user.id)
+  create() {
+    if (!this.user.partner) {
+      let body = {
+        qualification: this.profileType,
+      };
+      this.partnerService.createMembership(body)
+          .subscribe((data) => {
+          });
+    }
   }
 }
