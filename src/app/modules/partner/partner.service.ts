@@ -7,6 +7,7 @@ import { AuthService } from "../auth/auth.service";
 })
 export class PartnerService {
   private envPartner: string = `${environment.apiUrl}/user`;
+  private envMembership: string = `${environment.apiUrl}/partner`;
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
@@ -50,4 +51,52 @@ export class PartnerService {
       { headers }
     );
   }
+
+  public updateMembership(partnerID, body) {
+    let headers = new HttpHeaders();
+    headers = headers.set(
+        "Authorization",
+        `Bearer ${
+            (this.authService.userData && this.authService.userData.accessToken) ||
+            localStorage.getItem("accessToken")
+        }`
+    );
+    return this.http.put(
+        `${this.envMembership}/${partnerID}`,
+        body,
+        { headers }
+    );
+  }
+
+  public createMembership(body) {
+    let headers = new HttpHeaders();
+    headers = headers.set(
+        "Authorization",
+        `Bearer ${
+            (this.authService.userData && this.authService.userData.accessToken) ||
+            localStorage.getItem("accessToken")
+        }`
+    );
+    return this.http.post(
+        `${this.envMembership}`,
+        body,
+        { headers }
+    );
+  }
+
+  public deletePartnerProfile(id) {
+    let headers = new HttpHeaders();
+    headers = headers.set(
+        "Authorization",
+        `Bearer ${
+            (this.authService.userData && this.authService.userData.accessToken) ||
+            localStorage.getItem("accessToken")
+        }`
+    );
+    return this.http.delete(
+        `${this.envMembership}/${id}`,
+        { headers }
+    );
+  }
+
 }
