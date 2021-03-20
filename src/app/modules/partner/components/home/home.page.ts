@@ -12,6 +12,9 @@ export class HomePage implements OnInit {
   constructor(private partnerService: PartnerService) {}
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
     this.partnerService.getUserData().subscribe((data: any) => {
       if (data) {
         this.user = data.data;

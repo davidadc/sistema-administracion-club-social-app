@@ -13,9 +13,26 @@
     <ion-text>
       ¡Bienvenido de vuelta, {{user?.name}}!
     </ion-text>
-    <div class="upgradeProfile" >
+    <div class="upgradeProfile" *ngIf="!user?.partner">
       <span>¿Deseas gozar de más beneficios exclusivos?</span>
         <ion-button class="upgradePartner" routerLink="/partner/upgrade" size="small">¡Hazte Socio!</ion-button>
+    </div>
+    <div *ngIf="user?.partner?.qualification !== 0">
+      <ion-badge
+                 *ngIf="user?.partner?.qualification == 1"
+                 color="danger" slot="end"
+                 >Socio: Bronce
+      </ion-badge>
+      <ion-badge
+              *ngIf="user?.partner?.qualification == 2"
+              color="medium"
+      >Socio: Plata</ion-badge
+      >
+      <ion-badge
+              *ngIf="user?.partner?.qualification == 3"
+              color="warning"
+      >Socio: Oro</ion-badge
+      >
     </div>
   </ion-row>
 
