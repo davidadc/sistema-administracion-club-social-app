@@ -1,5 +1,7 @@
 {
   "name": "tabmultisidemenu",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
