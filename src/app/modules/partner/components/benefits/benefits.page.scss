@@ -1,0 +1,39 @@
+.menuTitle{
+  --ion-background-color: rgba(0,0,0,0.5) !important;
+  color: white !important;
+}
+
+
+ion-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+ion-card-title,
+ion-card-subtitle {
+  color: white !important;
+  text-align: center;
+  font-size: 1.6em;
+}
+
+
+ion-card {
+  background: rgba(0, 0, 0, 0.5) !important;
+  color: white;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ion-card-content {
+  text-align: justify;
+  height: auto ;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+img {
+  height: 50vw;
+}

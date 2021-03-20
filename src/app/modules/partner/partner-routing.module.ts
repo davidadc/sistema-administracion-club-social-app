@@ -32,6 +32,10 @@ const routes: Routes = [
         loadChildren: () => import('./components/activities/activities.module').then(m => m.ActivitiesPageModule)
       },
       {
+        path: 'benefits',
+        loadChildren: () => import('./components/benefits/benefits.module').then( m => m.BenefitsPageModule)
+      },
+      {
         path: '',
         redirectTo: '',
         pathMatch: 'full'
