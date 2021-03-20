@@ -1,7 +1,6 @@
 <ion-header>
   <ion-toolbar class="menuTitle">
     <ion-buttons slot="start">
-      <!-- <ion-menu-button menu="first" autohide="false" color="medium"></ion-menu-button> -->
       <ion-menu-button autohide="true" color="medium"></ion-menu-button>
     </ion-buttons>
     <ion-title  >Mi Perfil</ion-title>
@@ -24,73 +23,46 @@
         </ion-title>
       </ion-col>
       <ion-col class="col-button">
-        <div *ngIf="!editValues">
-          <ion-button (click)="editDates()" size="small">Editar datos</ion-button>
+        <div>
+          <ion-button routerLink="edit">Editar datos</ion-button>
         </div>
-       <div *ngIf="editValues">
-        <ion-button (click)="editDates()" color="danger" size="small">Cancel</ion-button>
-       </div> 
       </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center">
-      <form [formGroup]="editProfileForm">
-        <ion-item>
-          <ion-label>Nombre</ion-label>
-          <ion-input 
-            id="name"
-            formControlName="name"
-            minlength="4"
-            maxlength="20"
-            placeholder="Ingrese su nombre">
+      <form>
+          <ion-item>
+            <ion-label>Nombre</ion-label>
+            <ion-input disabled
+                    id="name"
+                    [value]="user?.name">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Correo electrónico</ion-label>
+            <ion-input disabled
+                    id="email"
+                    [value]="user?.email">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Telefono</ion-label>
+            <ion-input disabled
+                    id="phone"
+                    [value]="user?.phone">
+            </ion-input>
+          </ion-item>
+
+        <ion-item *ngIf="user?.partner">
+          <ion-label>Membresía</ion-label>
+          <ion-input disabled
+                  type="text"
+                  id="memembership"
+                  class="form-control"
+                  [value]="profileType">
           </ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label>Correo electrónico</ion-label>
-          <ion-input 
-            id="email"
-            formControlName="email"
-            minlength="4"
-            maxlength="40"
-            placeholder="Ingrese su correo electrónico">
-          </ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Telefono</ion-label>
-          <ion-input 
-            id="phone"
-            formControlName="phone"
-            minlength="4"
-            maxlength="20"
-            placeholder="Ingrese su telefono">
-          </ion-input>
-        </ion-item>
-        <ion-item *ngIf="editValues">
-          <ion-label>Contraseña</ion-label>
-          <ion-input 
-            type="password" 
-            id="password"
-            formControlName="password"
-            minlength="4"
-            maxlength="20"
-            placeholder="Ingrese su contraseña">
-          </ion-input>
-        </ion-item>
-        <ion-item *ngIf="editValues">
-          <ion-label>Confirmar contraseña</ion-label>
-          <ion-input 
-            type="password" 
-            id="confirmPassword"
-            formControlName="confirmPassword"
-            minlength="4"
-            maxlength="20"
-            placeholder="Confirma la contraseña">
-          </ion-input>
-        </ion-item>
+
       </form>
-        
-      <ion-col class="buttonLogin">
-        <ion-button (click)="updateUser()" *ngIf="editValues" size="small">Guardar cambios</ion-button>
-      </ion-col>
     </ion-row>
     
  
