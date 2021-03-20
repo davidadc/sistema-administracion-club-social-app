@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar class="menuTitle">
+    <ion-buttons slot="start">
+      <ion-menu-button autohide="true" color="medium"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Editar perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <form [formGroup]="editProfileForm">
+        <ion-item>
+          <ion-label>Nombre</ion-label>
+          <ion-input
+                  id="name"
+                  formControlName="name"
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Ingrese su nombre">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Correo electrónico</ion-label>
+          <ion-input
+                  id="email"
+                  formControlName="email"
+                  minlength="4"
+                  maxlength="40"
+                  placeholder="Ingrese su correo electrónico">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Telefono</ion-label>
+          <ion-input
+                  id="phone"
+                  formControlName="phone"
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Ingrese su telefono">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contraseña</ion-label>
+          <ion-input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Ingrese su contraseña">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Confirmar contraseña</ion-label>
+          <ion-input
+                  type="password"
+                  id="confirmPassword"
+                  formControlName="confirmPassword"
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Confirma la contraseña">
+          </ion-input>
+        </ion-item>
+      </form>
+
+      <ion-col class="buttonLogin">
+        <ion-button [disabled]="editProfileForm.invalid || !confirmPasswordValue"
+                    (click)="updateUser()"
+        >Guardar cambios</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="radioButtonRow">
+
+      <ion-radio-group *ngIf="user?.partner" value="{{user?.partner.qualification}}" (ionChange)="radioGroupChange($event)">
+        <ion-list-header>
+          <ion-label>Tipos de Membresía</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Eliminar membresía</ion-label>
+          <ion-radio slot="start" value="0"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Bronce</ion-label>
+          <ion-radio slot="start" value="1"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Plata</ion-label>
+          <ion-radio slot="start" value="2"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Oro</ion-label>
+          <ion-radio slot="start" value="3"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+
+      <ion-col *ngIf="user?.partner" class="buttonLogin">
+        <ion-button (click)="updateProfileMembership()">Actualizar membresía</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

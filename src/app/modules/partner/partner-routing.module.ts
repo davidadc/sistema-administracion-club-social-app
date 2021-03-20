@@ -36,6 +36,10 @@ const routes: Routes = [
         loadChildren: () => import('./components/benefits/benefits.module').then( m => m.BenefitsPageModule)
       },
       {
+        path: 'profile/edit',
+        loadChildren: () => import('./components/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+      },
+      {
         path: '',
         redirectTo: '',
         pathMatch: 'full'
