@@ -31,6 +31,9 @@ ion-grid{
       width: 100%;
       padding: 4% 5%;
       background-color: rgba(0,0,0,0.5) !important;
+      height: auto;
+      contain: content;
+
 
       ion-label {
         width: 100%;
@@ -57,4 +60,3 @@ ion-grid{
   }
   
 
-  

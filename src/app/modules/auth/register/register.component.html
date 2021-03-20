@@ -67,8 +67,11 @@
           </ion-input>
         </ion-item>
         <ion-col class="buttonLogin">
-          <ion-button  type="submit" size="small" [disabled]="newUserForm.invalid" (click)="registerNewUser()">Registrar</ion-button>
+          <ion-button  type="submit" size="small" [disabled]="!confirmPasswordValue || newUserForm.invalid" (click)="registerNewUser()">Registrar</ion-button>
         </ion-col>
+        <ion-chip *ngIf="errorMessage.length > 0">
+          <ion-label>{{ errorMessage }}</ion-label>
+        </ion-chip>
         <ion-chip *ngIf="name.invalid && name.touched">
           <ion-label>Debes agregar un nombre válido: entre 4 y 20 carácteres.</ion-label>
         </ion-chip>

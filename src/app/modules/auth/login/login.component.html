@@ -40,6 +40,9 @@
         <ion-col class="buttonLogin">
           <ion-button type="submit" size="small" [disabled]="userForm.invalid" (click)="loginUser()">Ingresar</ion-button>
         </ion-col>
+        <ion-chip *ngIf="errorMessage.length > 0">
+          <ion-label>{{ errorMessage }}</ion-label>
+        </ion-chip>
         <ion-chip *ngIf="email.invalid && email.touched">
           <ion-label> Debes agregar un correo electrónico válido: entre 4 y 20 carácteres.</ion-label>
         </ion-chip>

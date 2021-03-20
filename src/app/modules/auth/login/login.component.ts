@@ -10,6 +10,8 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
   public userForm: FormGroup;
+  public errorMessage: string = "";
+
 
   constructor(
     private authService: AuthService,
@@ -45,7 +47,9 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
-    this.authService.loginUser(this.userForm.value).subscribe((res: any) => {
+    this.authService.loginUser(this.userForm.value).subscribe(
+    (res: any) => {
+      this.errorMessage = "";
       this.initializeForm();
       this.authService.userData = res.data;
       localStorage.setItem(
@@ -54,6 +58,10 @@ export class LoginComponent implements OnInit {
       );
       localStorage.setItem("id", this.authService.userData.user.id);
       this.router.navigate(["/partner"]);
-    });
+    },
+    (err) => {
+      this.errorMessage = err.error.message;
+    }
+   );
   }
 }
